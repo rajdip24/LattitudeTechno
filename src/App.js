@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {
+  Link,
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  NavLink,
+} from "react-router-dom";
+import AddUsers from "./components/users/AddUsers";
+import LoginPage from "./LoginPage";
+import Main from "./Main";
+import SignUp from "./SignUp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <h3>Pages</h3>
+
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li>
+              <Link to={"/"} className="nav-link">
+                {" "}
+                Sign Up{" "}
+              </Link>
+            </li>
+            <li>
+              <NavLink to={"/LoginPage"} className="nav-link">
+                Log In{" "}
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route exact path="/" element={<SignUp />} />
+          <Route exact path="/LoginPage" element={<LoginPage />} />
+          <Route exact path="/mainpage" element={<Main />} />
+          <Route exact path="/AddUsers" element={<AddUsers />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
