@@ -111,13 +111,18 @@ import { useNavigate } from "react-router-dom";
 const AddUser = () => {
   let navigate = useNavigate();
   const [user, setUser] = useState({
-    email: "",
-    first_name: "",
-    last_name: "",
-    avatar: "",
+    // email: "",
+    // first_name: "",
+    // last_name: "",
+    // avatar: "",
+    name:"",
+    job:""
   });
 
-  const { email, first_name, last_name, avatar } = user;
+  // const { email, first_name, last_name, avatar } = user;
+
+  const { name , job } =user;
+
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -174,11 +179,11 @@ const onSubmit=async(e)=>{
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
-              type="email"
+              type="text"
               className="form-control form-control-lg"
-              placeholder="Email"
-              name="email"
-              value={email}
+              placeholder="name"
+              name="name"
+              value={name}
               onChange={(e) => onInputChange(e)}
             />
           </div>
@@ -186,13 +191,13 @@ const onSubmit=async(e)=>{
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="first_name"
-              name="first_name"
-              value={first_name}
+              placeholder="job"
+              name="job"
+              value={job}
               onChange={(e) => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
@@ -212,7 +217,7 @@ const onSubmit=async(e)=>{
               value={avatar}
               onChange={(e) => onInputChange(e)}
             />
-          </div>
+          </div> */}
           <button className="btn btn-primary btn-block" onClick={e=>onSubmit(e)}>
             Add User
           </button>
