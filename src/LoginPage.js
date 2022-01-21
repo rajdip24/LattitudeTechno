@@ -1,11 +1,12 @@
 import { Box, Button, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Main from "./Main";
 
 function LoginPage(props) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [main, setMain] = useState(true);
+  const [loggedin,setLoggedin] = useEffect('');
 
   function handleCheck(e) {
     let storedName = localStorage.getItem("Name", name);
@@ -46,7 +47,7 @@ function LoginPage(props) {
         <Button variant="contained" onClick={handleCheck}>Submit</Button>
       </Box>
       ) : (
-        <Main />
+        <Main handleCheck={handleCheck}/>
       )}
     </div>
   );

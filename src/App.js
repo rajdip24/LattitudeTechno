@@ -8,6 +8,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import AddUsers from "./components/users/AddUsers";
+import MyAcoount from "./components/users/MyAcoount";
 import LoginPage from "./LoginPage";
 import Main from "./Main";
 import SignUp from "./SignUp";
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/LoginPage" element={<LoginPage />} />
           <Route exact path="/mainpage" element={<Main />} />
           <Route exact path="/AddUsers" element={<AddUsers />} />
+          <Route exact path="/Myaccount" element={<MyAcoount/>}/>
         </Routes>
       
     </Router>
