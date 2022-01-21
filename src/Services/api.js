@@ -13,4 +13,5 @@ const url = "https://reqres.in/api/users?page=2";
 
 export const getUsers=async()=>{
     return await axios.get(url);
-}
+}   
+5
