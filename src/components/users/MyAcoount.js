@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useState ,useEffect} from 'react';
 
 
@@ -14,10 +15,8 @@ import React, { useState ,useEffect} from 'react';
 //     }
 //   }
   
-function MyAcoount({handleCheck}) {
-    const [loggedin,setLoggedIn] = useState(handleCheck)
-
-    
+function MyAcoount() {
+        
     useEffect(()=>{
         
         // setLoggedIn(localStorage.getItem('Name'))
@@ -25,7 +24,10 @@ function MyAcoount({handleCheck}) {
         // setLoggedIn(loggedin)
         // console.log('loop')
         },[])
-        
+        const removeAccount = () =>{
+            alert('Are you sure you want delete the account')
+            localStorage.clear();
+        }
         
     return (
         <div>
@@ -35,6 +37,7 @@ function MyAcoount({handleCheck}) {
             <p>Email is :{localStorage.getItem('Email')}</p>
             <p>Number is :{localStorage.getItem('Number')}</p>
             <p>PIc is :{localStorage.getItem('pic')}</p>
+            <Button onClick={removeAccount}>Account deleted</Button>
         </div>
     );
 }
