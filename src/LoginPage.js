@@ -6,7 +6,6 @@ function LoginPage(props) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [main, setMain] = useState(true);
-  const [loggedin,setLoggedin] = useEffect('');
 
   function handleCheck(e) {
     let storedName = localStorage.getItem("Name", name);
@@ -47,7 +46,7 @@ function LoginPage(props) {
         <Button variant="contained" onClick={handleCheck}>Submit</Button>
       </Box>
       ) : (
-        <Main handleCheck={handleCheck}/>
+        <Main/>
       )}
     </div>
   );

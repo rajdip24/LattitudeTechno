@@ -51,7 +51,7 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import { Link } from "react-router-dom";
 
-export default function MenuListComposition() {
+export default function Main() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
